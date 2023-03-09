@@ -10,7 +10,7 @@ import lombok.Setter;
 public class PreguntaRespuesta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "pregunta_id")
@@ -22,7 +22,7 @@ public class PreguntaRespuesta {
 
     private Boolean esVerdadera;
 
-    public PreguntaRespuesta(Long id, Pregunta pregunta, Respuesta respuesta, Boolean esVerdadera) {
+    public PreguntaRespuesta(Integer id, Pregunta pregunta, Respuesta respuesta, Boolean esVerdadera) {
         this.id = id;
         this.pregunta = pregunta;
         this.respuesta = respuesta;

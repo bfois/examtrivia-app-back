@@ -1,6 +1,7 @@
 package com.api.examtrivia.Entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,8 +13,9 @@ import java.util.List;
 public class Respuesta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
+    @NotNull
     private String texto;
 
     @OneToMany(mappedBy = "respuesta")
@@ -24,7 +26,7 @@ public class Respuesta {
     public Respuesta() {
     }
 
-    public Respuesta(Long id, String texto, List<PreguntaRespuesta> preguntaRespuestas) {
+    public Respuesta(Integer id, String texto, List<PreguntaRespuesta> preguntaRespuestas) {
         this.id = id;
         this.texto = texto;
         this.preguntaRespuestas = preguntaRespuestas;
