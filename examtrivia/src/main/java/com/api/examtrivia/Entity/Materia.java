@@ -1,5 +1,6 @@
 package com.api.examtrivia.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -23,6 +24,7 @@ public class Materia {
     private Disciplina disciplina;
 
     @OneToMany(mappedBy = "materia", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Temas> temas;
 
 
