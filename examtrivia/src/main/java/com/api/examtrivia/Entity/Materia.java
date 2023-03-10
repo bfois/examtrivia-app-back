@@ -2,13 +2,15 @@ package com.api.examtrivia.Entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
-@Getter @Setter
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Materia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,11 +25,5 @@ public class Materia {
     @OneToMany(mappedBy = "materia", cascade = CascadeType.ALL)
     private List<Temas> temas;
 
-    public Materia(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
 
-    public Materia() {
-    }
 }
