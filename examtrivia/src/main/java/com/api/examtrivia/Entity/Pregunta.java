@@ -1,5 +1,6 @@
 package com.api.examtrivia.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -21,6 +22,7 @@ public class Pregunta {
     private String ImgURL;
 
     @OneToMany(mappedBy = "pregunta")
+    @JsonIgnore
     private List<PreguntaRespuesta> preguntaRespuestas;
 
     @ManyToOne

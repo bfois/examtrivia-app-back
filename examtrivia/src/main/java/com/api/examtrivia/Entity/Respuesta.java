@@ -1,5 +1,6 @@
 package com.api.examtrivia.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -19,6 +20,7 @@ public class Respuesta {
     private String texto;
 
     @OneToMany(mappedBy = "respuesta")
+    @JsonIgnore
     private List<PreguntaRespuesta> preguntaRespuestas;
 
     // Constructor, getters y setters
