@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface DisciplinaService {
 
     List<Disciplina> listAll();
-    Optional<Disciplina> ListById(int id);
+    Optional<Disciplina> listById(int id);
 }

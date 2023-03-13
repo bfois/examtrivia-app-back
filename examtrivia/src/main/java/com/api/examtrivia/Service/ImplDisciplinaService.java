@@ -20,7 +20,7 @@ public class ImplDisciplinaService implements DisciplinaService {
     }
 
     @Override
-    public Optional<Disciplina> ListById(int id) {
+    public Optional<Disciplina> listById(int id) {
         return iDisciplina.findById(id);
     }
 }

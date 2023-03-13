@@ -8,5 +8,7 @@ import java.util.Optional;
 
 public interface PreguntaService {
     List<Pregunta> listAll();
-    Optional<Pregunta> ListById(int id);
+    Optional<Pregunta> listById(int id);
+
+
 }

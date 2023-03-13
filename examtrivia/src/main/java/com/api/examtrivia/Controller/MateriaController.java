@@ -27,7 +27,7 @@ public class MateriaController {
     }
     @GetMapping("/materias/{id}/temas")
     private ResponseEntity<?> listTemasByMateriaId(@PathVariable("id") int id) {
-        Optional<Materia> materia = materiaService.ListById(id);
+        Optional<Materia> materia = materiaService.listById(id);
         if (materia.isPresent()) {
             List<Temas> temas = materia.get().getTemas();
             return ResponseEntity.ok(temas);

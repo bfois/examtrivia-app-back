@@ -1,12 +1,14 @@
 package com.api.examtrivia.Service;
 
 import com.api.examtrivia.Entity.Pregunta;
+import com.api.examtrivia.Entity.Temas;
 import com.api.examtrivia.Repository.IPregunta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ImplPreguntaService implements PreguntaService{
@@ -18,7 +20,10 @@ public class ImplPreguntaService implements PreguntaService{
     }
 
     @Override
-    public Optional<Pregunta> ListById(int id) {
+    public Optional<Pregunta> listById(int id) {
         return iPregunta.findById(id);
     }
+
+
+
 }

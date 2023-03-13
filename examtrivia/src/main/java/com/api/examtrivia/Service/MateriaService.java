@@ -11,6 +11,6 @@ import java.util.Optional;
 public interface MateriaService {
 
     List<Materia> listAll();
-    Optional<Materia> ListById(int id);
+    Optional<Materia> listById(int id);
 
 }

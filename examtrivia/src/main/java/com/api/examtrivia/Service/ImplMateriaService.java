@@ -20,7 +20,7 @@ public class ImplMateriaService implements MateriaService {
     }
 
     @Override
-    public Optional<Materia> ListById(int id) {
+    public Optional<Materia> listById(int id) {
         return iMateria.findById(id);
     }
 }

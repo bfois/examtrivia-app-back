@@ -27,7 +27,7 @@ public class DisciplinaController {
     }
     @GetMapping("/disciplinas/{id}/materias")
     private ResponseEntity<?> listMateriasByDisciplinaId(@PathVariable("id") int id) {
-        Optional<Disciplina> disciplina = disciplinaService.ListById(id);
+        Optional<Disciplina> disciplina = disciplinaService.listById(id);
         if (disciplina.isPresent()) {
             List<Materia> materias = disciplina.get().getMaterias();
             return ResponseEntity.ok(materias);
