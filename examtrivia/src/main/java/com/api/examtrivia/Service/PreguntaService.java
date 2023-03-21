@@ -10,5 +10,6 @@ public interface PreguntaService {
     List<Pregunta> listAll();
     Optional<Pregunta> listById(int id);
 
+    List<Pregunta> listByIds(List<Integer> ids);
 
 }

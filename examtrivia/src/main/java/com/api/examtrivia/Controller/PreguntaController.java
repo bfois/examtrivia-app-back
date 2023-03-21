@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,15 +23,14 @@ public class PreguntaController {
         return ResponseEntity.ok(preguntas);
     }
 
-    @GetMapping("/pregunta/{id}/respuestas")
-    private ResponseEntity<?> listRespuestasByPreguntaId(@PathVariable("id") int id) {
-        Optional<Pregunta> pregunta = preguntaService.listById(id);
-        if (pregunta.isPresent()) {
-            List<PreguntaRespuesta> respuestas = pregunta.get().getPreguntaRespuestas();
-            return ResponseEntity.ok(respuestas);
-        } else {
-            return ResponseEntity.notFound().build();
+    @GetMapping("/pregunta/{ids}/respuestas")
+    private ResponseEntity<?> listRespuestasByPreguntaId(@PathVariable("ids")  List<Integer> ids) {
+        List<Pregunta> preguntas = preguntaService.listByIds(ids);
+        List<PreguntaRespuesta> respuestas = new ArrayList<>();
+        for (Pregunta pregunta : preguntas) {
+            respuestas.addAll(pregunta.getPreguntaRespuestas());
         }
+        return ResponseEntity.ok(respuestas);
     }
 
 }

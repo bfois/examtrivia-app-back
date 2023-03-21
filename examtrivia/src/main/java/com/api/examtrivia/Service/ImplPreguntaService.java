@@ -24,6 +24,10 @@ public class ImplPreguntaService implements PreguntaService{
         return iPregunta.findById(id);
     }
 
+    @Override
+    public List<Pregunta> listByIds(List<Integer> ids) {
+        return iPregunta.findAllById(ids);
+    }
 
 
 }

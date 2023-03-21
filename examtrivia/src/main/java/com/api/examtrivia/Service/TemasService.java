@@ -9,4 +9,6 @@ public interface TemasService {
 
     List<Temas> listAll();
     Optional<Temas> listById(int id);
+
+    List<Temas> listByIds(List<Integer> ids);
 }

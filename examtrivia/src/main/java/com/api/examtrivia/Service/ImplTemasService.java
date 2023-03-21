@@ -23,4 +23,10 @@ public class ImplTemasService implements TemasService{
     public Optional<Temas> listById(int id) {
         return iTemas.findById(id);
     }
+
+    @Override
+    public List<Temas> listByIds(List<Integer> ids) {
+            return iTemas.findAllById(ids);
+    }
+
 }
