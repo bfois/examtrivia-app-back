@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/")
-@CrossOrigin(origins = "https://polinomicos.com")
+@CrossOrigin(origins = {"https://polinomicos.com", "http://localhost:4200"})
 public class RespuestaController {
     @Autowired
     private RespuestaService respuestaService;
