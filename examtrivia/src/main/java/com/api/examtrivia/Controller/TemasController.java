@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1")
-@CrossOrigin("http://localhost:4200/")
+@CrossOrigin("https://polinomicos.com/")
 public class TemasController {
 
     @Autowired
@@ -28,7 +28,6 @@ public class TemasController {
 
     @GetMapping("/temas/{ids}/preguntas")
     private ResponseEntity<?> listPreguntasByTema(@PathVariable("ids") List<Integer> ids,
-                                                  @RequestParam(defaultValue = "0") Integer page,
                                                   @RequestParam(defaultValue = "20") Integer size,
                                                   @RequestParam(defaultValue = "0") Integer startIndex) {
         List<Temas> temas = temasService.listByIds(ids);

@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1/home")
-@CrossOrigin("http://localhost:4200/")
+@CrossOrigin("https://polinomicos.com/")
 public class MateriaController {
 
     @Autowired
