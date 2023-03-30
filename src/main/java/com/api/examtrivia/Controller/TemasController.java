@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("api/v1")
-@CrossOrigin(origins = {"https://polinomicos.com", "http://localhost:4200"})
+@CrossOrigin(origins = {"https://polinomicos.com/", "http://localhost:4200"})
 public class TemasController {
 
     @Autowired
