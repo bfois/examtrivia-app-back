@@ -14,7 +14,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/home")
-@CrossOrigin(origins = "*")
 public class DisciplinaController {
 
     @Autowired
